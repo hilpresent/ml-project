@@ -28,6 +28,8 @@ Day 1:
         - create new file called requirements.txt
             - will hold information on all of the packages and libraries we will be using throughout this project
         - see files to see what needs to be added
+        - had to run "pip install --force-reinstall -r requirements.txt" in order to install in my venv instead of my local comp
+        - once things are running properly, "pip freeze > requirements.txt" to save current version of packages and libraries
 2. src folder and build the package
     a) create "src" folder and add "__init__.py" file to tell setup.py where to read requirements from
     b) run "pip install -r requirements.txt" to install libraries necessary for this project
@@ -80,3 +82,19 @@ Day 2:
 3. logging
     - created a function to log any errors that occur
     - see logging.py for the code and notes on what each line is doing
+
+
+Day 3:
+1. project problem structure 
+    - what kind of dataset should we start with?
+        - very important question to start with this question
+    - project basis: student performance indicators
+    - project may sound simple, but it's all encompassing
+        - features of all types (categorical, numerical, NaN, etc.)
+        - want to see how we can perform feature engineering to begin with
+    - want to take the jupyter notebook code we'd normally use and convert it to modular code
+2. EDA
+    - create EDA.ipynb notebook
+    - when starting to write code, will need to connect to a Python kernel and install the kernel for this project's venv in that notebook
+    - run "python -m ipykernel install --user --name=ml-project-venv --display-name "Python (ml-project-venv)"" in order to properly set up venv kernel
+3. model training
