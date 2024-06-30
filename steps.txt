@@ -40,3 +40,43 @@ Day 1:
         - means git remembers the branch you are tracking
         - don't need to keep indicating remote and branch each time
         - streamlines for future use (can just say "git push" and "git pull")
+
+Day 2:
+1. project structure
+    a) will be doing manually to ensure I understand everything
+    b) this can also be done manually  
+        - can create and code something like "template.py" and automatically the entire folder structure will be created
+
+    - create "components" folder in "src" folder
+    - add "__init__.py" file to allow components to be created as a package
+        - allows to be exported (imported to some other file location)
+    - will contain all of the modules we will be using 
+        - ex: data_ingestion -> reading the data from some database
+    - add "data_ingestion.py" file to components
+    - add "data_transformation.py" file to components
+    - add "model_trainer.py" file to components
+        - will including pushing model pkl file to the cloud
+
+    - create "pipeline" folder in "src" folder
+    - create "train_pipeline.py" file in pipeline
+        - will have all code for the training pipeline
+        - will try to trigger/call all of the training components/modules
+    - create "predict_pipeline.py" in pipeline 
+        - for the new data
+        - will call all of the prediction modules that we code
+    - add __init__.py so that everything here can be imported!!
+
+    c) create logger.py file for logging
+    d) create exception.py for exception handling
+    e) create utils.py  
+        - for any functionalities that we're writing in a common way
+        - ex: reading a dataset from a database, create mongodb client in utils.py
+        - ex: saving a model into the cloud, write the code in utils.py
+
+2. exception handling
+    - going to write own custom exception
+    - see exception.py for the code and notes on what each line is doing
+
+3. logging
+    - created a function to log any errors that occur
+    - see logging.py for the code and notes on what each line is doing
