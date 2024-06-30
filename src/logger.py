@@ -4,7 +4,7 @@ from datetime import datetime
 
 # allows us to log and see information on all of the code we are executing
 # helps with debugging and tracking errors
-LOG_FILE = f'{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log'
+LOG_FILE = f'{datetime.now().strftime("%m_%d_%Y_%H_%M_%S")}.log'
 
 # name will first get current working directory
 # name will then get the string "logs"
@@ -24,6 +24,11 @@ LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
 # `level` sets the logging level (INFO in this case)
 logging.basicConfig(
     filename=LOG_FILE_PATH, # log messages saved to this file
-    format="[ %(acstime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s", # this is considered best practice
+    format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s", # this is considered best practice
     level=logging.INFO, # will log messages with level INFO and higher (INFO, WARNING, ERROR, CRITICAL)
 )
+
+# check to see if script is being run directly (not being imported)
+if __name__ == "__main__": # set by the Python interpreter if being run directly
+    # this code block will only run if the script is executed directly
+    logging.info('Logging has started.')
