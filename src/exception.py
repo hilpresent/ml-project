@@ -43,11 +43,11 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
     
-# check to ensure everything is working properly between custom exception handling and logging those errors
-if __name__ == "__main__":
-    # will only be executed if running directly, meaning not imported elsewhere
-    try:
-        a = 1/0 # will error out duh
-    except Exception as e:
-        logging.info('Divided by zero error')
-        raise CustomException(e, sys)
+# # check to ensure everything is working properly between custom exception handling and logging those errors
+# if __name__ == "__main__":
+#     # will only be executed if running directly, meaning not imported elsewhere
+#     try:
+#         a = 1/0 # will error out duh
+#     except Exception as e:
+#         logging.info('Divided by zero error')
+#         raise CustomException(e, sys)

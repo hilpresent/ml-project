@@ -28,7 +28,7 @@ logging.basicConfig(
     level=logging.INFO, # will log messages with level INFO and higher (INFO, WARNING, ERROR, CRITICAL)
 )
 
-# check to see if script is being run directly (not being imported)
-if __name__ == "__main__": # set by the Python interpreter if being run directly
-    # this code block will only run if the script is executed directly
-    logging.info('Logging has started.')
+# # check to see if script is being run directly (not being imported)
+# if __name__ == "__main__": # set by the Python interpreter if being run directly
+#     # this code block will only run if the script is executed directly
+#     logging.info('Logging has started.')
