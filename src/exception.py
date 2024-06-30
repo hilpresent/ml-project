@@ -1,7 +1,7 @@
 # sys allows user to manipulate different parts of the python environment
 # sys library helps handle exceptions
 import sys
-import logging # our logging.py file
+from src.logger import logging # this allows us to properly import logger so it WILL have __name__ == __main__ and the logs will be saved
 
 # tells us error_detail information comes from the sys library
 def error_message_detail(error, error_detail:sys):
@@ -43,11 +43,11 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
     
-# # check to ensure everything is working properly between custom exception handling and logging those errors
-# if __name__ == "__main__":
-#     # will only be executed if running directly, meaning not imported elsewhere
-#     try:
-#         a = 1/0 # will error out duh
-#     except Exception as e:
-#         logging.info('Divided by zero error')
-#         raise CustomException(e, sys)
+# check to ensure everything is working properly between custom exception handling and logging those errors
+if __name__ == "__main__":
+    # will only be executed if running directly, meaning not imported elsewhere
+    try:
+        a = 1/0 # will error out duh
+    except Exception as e:
+        logging.info('Divided by zero error')
+        raise CustomException(e, sys)
