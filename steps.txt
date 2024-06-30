@@ -28,9 +28,15 @@ Day 1:
         - create new file called requirements.txt
             - will hold information on all of the packages and libraries we will be using throughout this project
         - see files to see what needs to be added
-        - run "pip install -r requirements.txt" to install libraries necessary for this project
-        - indicates to run setup.py to build the project   
+2. src folder and build the package
+    a) create "src" folder and add "__init__.py" file to tell setup.py where to read requirements from
+    b) run "pip install -r requirements.txt" to install libraries necessary for this project
+            - indicates to run setup.py to build the project   
             - generates "ml_project.egg-info" folder with information on the project
             - top_level.txt -> finds src folder because that contains "__init__.py" file
             - requires.txt -> list of all requirements sans "-e ."
-
+3. don't forget to "git add ." and "git commit" and "git push -u origin main"!
+    a) note: the "-u" in "git push -u origin main" sets the upstream branch 
+        - means git remembers the branch you are tracking
+        - don't need to keep indicating remote and branch each time
+        - streamlines for future use (can just say "git push" and "git pull")
