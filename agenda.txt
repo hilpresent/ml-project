@@ -1,0 +1,36 @@
+Day 1:
+1. Set up the github repository
+    a) new environemt
+        - "conda create -p venv python==3.9 -y"
+        - do "y" so it loads when you open it and you don't need to continue to grant access
+        - "conda activate /Users/hilpresent/Desktop/Portfolio/project_ml-project/venv" to activate virtual environment
+    b) clone repository and sync with github
+        - git init
+        - git add README.md
+            - I created an actual file in VS Code first and then executed the "git add README.md" command
+        - git commit -m "first commit"
+        - git branch -M main
+        - git remote add origin https://github.com/hilpresent/ml-project.git
+            - adding this makes sure local device is in sync with github repo
+            - "git remote -v" will confirm that this project folder has been properly synced with your github repo
+        - git push -u origin main
+            - "git config --global user.email" to set email address if this is your first repo
+            - can change email by typing "git config --global user.email <new_email_address>"
+        - create .gitignore on github site
+            - select "add a new file" and name it ".gitignore"
+            - choose python as template
+            - commit change
+            - git pull on your local directory to get the .gitignore file
+    c) setup.py and requirements.txt
+        - create new file called setup.py
+            - responsible in making machine learning application as a package
+            - allows anybody to install this application as a package and use it themselves
+        - create new file called requirements.txt
+            - will hold information on all of the packages and libraries we will be using throughout this project
+        - see files to see what needs to be added
+        - run "pip install -r requirements.txt" to install libraries necessary for this project
+        - indicates to run setup.py to build the project   
+            - generates "ml_project.egg-info" folder with information on the project
+            - top_level.txt -> finds src folder because that contains "__init__.py" file
+            - requires.txt -> list of all requirements sans "-e ."
+
