@@ -14,9 +14,15 @@ from dataclasses import dataclass # used to create class variables
 # this config will be used to set up paths for the data ingestion component
 @dataclass # we will use this decorator here
 class DataIngestionConfig:
+    # get the current directory name
+    current_dir:str = os.path.dirname(__file__)
+
+    # get the path for this data_ingestion.py file
+    input_data_path:str = os.path.join(current_dir, '../../notebook/data/student_performance.csv')
+
     # paths to save output data in artifacts folder
     train_data_path:str = os.path.join('artifacts', 'train.csv')
-    eval_data_path:str = os.path.join('atrifacts', 'eval.csv')
+    eval_data_path:str = os.path.join('artifacts', 'eval.csv')
     test_data_path:str = os.path.join('artifacts', 'test.csv')
     raw_data_path:str = os.path.join('artifacts', 'data.csv')
 
@@ -33,7 +39,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info('Entered the data injection method or component')
         try:
-            df = pd.read_csv('project_ml-project/notebook/data/student_performance.csv')
+            df = pd.read_csv(self.ingestion_config.input_data_path)
             logging.info('Read the dataset as a dataframe')
 
             # make artifact directory for the paths above
@@ -60,3 +66,7 @@ class DataIngestion:
             )
         except Exception as e:
             raise CustomException(e, sys)
+        
+if __name__ == '__main__':
+    object = DataIngestion()
+    object.initiate_data_ingestion()

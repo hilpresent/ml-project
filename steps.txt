@@ -108,4 +108,7 @@ Day 4: Data Ingestion Implementation
     - create configuration classes such as DataIngestionConfig
         - point of condig classes is to centralize and manage configurations settings related to a specific component of the data processing pipeline
         - easier to modify and reuse as needed
-        
+    - add a @dataclass decorator
+        - `@dataclass` decorator in Python auto generates special methods for the class (such as `__init__()`)
+        - when you use `@dataclass` it creates an __init__ method for you, so you don't need to manually write it out and use self to assign parameters to instance vars
+        - makes code a lot more concise
