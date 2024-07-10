@@ -100,3 +100,12 @@ Day 3:
 3. model training
     - go through model training notebook similar to the EDA notebook above
     - once done, we will get starting on moving all of it over to our src code to actually implement the code!
+
+Day 4: Data Ingestion Implementation
+1. Convert to CICD (continuous integration/continuous deploymnet) pipeline
+    - we want to take our work from our notebooks and convert it to actual code that can be running continuously whenever we want
+    - read the data from some data source (from Big Data team at company or cloud team, etc.)
+    - create configuration classes such as DataIngestionConfig
+        - point of condig classes is to centralize and manage configurations settings related to a specific component of the data processing pipeline
+        - easier to modify and reuse as needed
+        
