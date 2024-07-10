@@ -98,3 +98,5 @@ Day 3:
     - when starting to write code, will need to connect to a Python kernel and install the kernel for this project's venv in that notebook
     - run "python -m ipykernel install --user --name=ml-project-venv --display-name "Python (ml-project-venv)"" in order to properly set up venv kernel
 3. model training
+    - go through model training notebook similar to the EDA notebook above
+    - once done, we will get starting on moving all of it over to our src code to actually implement the code!
